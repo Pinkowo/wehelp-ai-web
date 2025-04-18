@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>短文本分類預測</title>
+    <script defer src="/static/script.js"></script>
+  </head>
+  <body>
+    <h2>歡迎使用短文本分類預測</h2>
+
+    <input id="title-input" placeholder="輸入文章標題" />
+    <button id="predict-btn">預測分類</button>
+
+    <div id="result-block" style="display: none">
+      <p>預測結果：<span id="pred-label"></span></p>
+      <p>選擇您認為更正確的分類</p>
+      <div id="suggestions"></div>
+    </div>
+  </body>
+</html>
