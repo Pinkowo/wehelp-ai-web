@@ -38,8 +38,8 @@ document.getElementById("predict-btn").onclick = async () => {
 async function sendFeedback(title, label) {
   await fetch("/api/model/feedback", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, label }),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ title, label }),
   });
   alert("感謝回饋！");
 }
