@@ -21,7 +21,11 @@ document.getElementById("predict-btn").onclick = async () => {
   const data = await res.json();
 
   // 顯示結果
-  document.getElementById("pred-label").textContent = data.label;
+  const predLabel = data.label;
+  document.getElementById("pred-label").textContent = predLabel;
+  document.getElementById(
+    "pred-link"
+  ).href = `https://www.ptt.cc/bbs/${predLabel}/index.html`;
   document.getElementById("result-block").style.display = "block";
 
   // 產生建議按鈕

@@ -1,3 +1,120 @@
-h1 {
-    color: green;
+html,
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#wrapper {
+    padding: 40px;
+    height: 100vh;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    height: 20px;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #ff6;
+    background-color: #0c0a66;
+    margin: 0;
+    font-weight: 400;
+    font-family: "細明體", "AR PL UMing TW", "Inconsolata", "LiSongPro", monospace;
+}
+
+#title-input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    border: 1px solid #333;
+    background-color: #222;
+    padding: 0.8ex;
+    color: #ccc;
+    font-size: 20px;
+}
+
+#title-input:focus {
+    background-color: #333;
+    outline: none;
+    border-color: #666;
+}
+
+#predict-btn {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #666;
+    background-color: #444;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#predict-btn:hover {
+    background-color: #bbb;
+    border-color: #eee;
+    color: #000;
+}
+
+#result-block {
+    color: #fff;
+    width: 100%;
+}
+
+#result-block>p {
+    text-align: center;
+}
+
+#result {
+    margin: 1ex 0;
+    padding: 0.5ex 0;
+    background-color: #111;
+    color: #aaa;
+    font-size: 20px;
+    height: 50px;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+#result>a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+#result>a:hover {
+    color: #333;
+    background-color: #ccc;
+}
+
+#separate {
+    height: 0.5ex;
+    width: 100%;
+    background-color: #555;
+}
+
+#suggestions {
+    display: flex;
+    flex-direction: column;
+}
+
+#suggestions>button {
+    color: #888;
+    border: 0;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+#suggestions>button:hover {
+    cursor: pointer;
+    background-color: #bbb;
 }
