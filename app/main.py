@@ -8,8 +8,9 @@ from pathlib import Path
 import csv
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+BASE_DIR = Path(__file__).resolve().parent
+app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
+templates = Jinja2Templates(directory=BASE_DIR / "app" / "templates")
 FEEDBACK_FILE = Path("user-labeled-titles.csv")
 
 
