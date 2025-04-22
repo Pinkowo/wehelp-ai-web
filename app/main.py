@@ -20,8 +20,8 @@ async def root(request: Request):
 
 @app.get("/api/model/prediction")
 async def prediction_api(title: str):
-    label = predict(title)
-    return {"label": label}
+    ranked = predict(title)
+    return {"label": ranked[0]["label"], "probs": ranked}
 
 
 @app.post("/api/model/feedback")

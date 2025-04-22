@@ -37,10 +37,14 @@ def _vectorize(text: str):
     return _d2v.infer_vector(tokens, epochs=50)
 
 
-def predict(text: str) -> str:
-    """回傳預測的 PTT 看板名稱。"""
+def predict(text: str) -> dict:
+    """回傳所有分類的機率分布（由高到低排序）"""
     vec = _vectorize(text)
     with torch.no_grad():
         logits = _classifier(torch.tensor(vec, dtype=torch.float).unsqueeze(0))
-        pred_idx = int(torch.argmax(logits, dim=1).item())
-    return IDX2LABEL[pred_idx]
+        probs = torch.softmax(logits, dim=1).squeeze().tolist()
+    label_probs = [
+        {"label": label, "score": probs[idx]} for idx, label in IDX2LABEL.items()
+    ]
+    label_probs.sort(key=lambda x: x["score"], reverse=True)
+    return label_probs

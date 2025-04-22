@@ -12,7 +12,6 @@ const labels = [
 
 document.getElementById("predict-btn").onclick = async () => {
   const title = document.getElementById("title-input").value.trim();
-  console.log("click", title);
   if (!title) return alert("請輸入標題");
 
   const res = await fetch(
