@@ -3,7 +3,7 @@ import json
 import torch
 from gensim.models.doc2vec import Doc2Vec
 
-from .model_arch import Classifier  # 確保 app/model_arch.py 內有相同定義
+from model_arch import Classifier  # 確保 model_arch.py 內有相同定義
 
 # === 路徑設定 ===============================================================
 BASE_DIR = (
